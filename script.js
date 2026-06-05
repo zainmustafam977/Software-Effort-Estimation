@@ -95,21 +95,24 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             backToTop.classList.remove('visible');
         }
+
+        // Seamless Theme Transition on Scroll
+        // Calculate scroll percentage
+        const maxScroll = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollY / maxScroll;
+        
+        // Transition to light mode when scrolled past 25% of the page
+        if (scrollPercent > 0.25) {
+            document.body.classList.add('light-mode');
+            if (window.particlesJS && window.pJSDom && window.pJSDom.length > 0) {
+                // Optional: change particle colors for light mode
+            }
+        } else {
+            document.body.classList.remove('light-mode');
+        }
     });
 
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // 6. Dark/Light Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        const icon = themeToggle.querySelector('i');
-        if(document.body.classList.contains('light-mode')) {
-            icon.classList.replace('fa-moon', 'fa-sun');
-        } else {
-            icon.classList.replace('fa-sun', 'fa-moon');
-        }
-    });
 
     // 11. Intersection Observer Fade-ins & 4. Animated Counters
     const observerOptions = { threshold: 0.1 };

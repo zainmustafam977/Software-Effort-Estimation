@@ -119,12 +119,20 @@ body:active .cursor-outline { transform: translate(-50%, -50%) scale(0.8); }
 .fade-in-el.visible { opacity: 1; transform: translateY(0); }
 
 /* Sections */
-.section { max-width: 1200px; margin: 0 auto 120px; padding: 80px; }
-.section h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
+.section { max-width: 1200px; margin: 0 auto 120px; padding: 80px; transition: box-shadow 0.5s ease, transform 0.5s ease; border: 1px solid transparent; }
+.section:hover { box-shadow: 0 10px 40px rgba(0,0,0,0.2); transform: translateY(-2px); border: 1px solid var(--glass-border); }
+.section h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; transition: text-shadow 0.3s ease, transform 0.3s ease; }
+.section h2:hover { text-shadow: 0 0 15px var(--primary); transform: scale(1.02); }
 .section-desc { text-align: center; color: var(--text-muted); margin-bottom: 50px; }
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
-.card { background: var(--card-bg); padding: 40px; border-radius: 15px; border: 1px solid var(--glass-border); transition: 0.3s; }
-.card:hover { transform: translateY(-5px); border-color: var(--primary); }
+
+/* Enhanced Unique Card Hover Effects */
+.card { background: var(--card-bg); padding: 40px; border-radius: 15px; border: 1px solid var(--glass-border); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; z-index: 1; }
+.card::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent); transition: left 0.6s ease; z-index: -1; }
+.card:hover::before { left: 100%; }
+.card:hover { transform: translateY(-10px) scale(1.03) rotate(0.5deg); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.3), inset 0 0 20px rgba(74, 222, 128, 0.1); }
+.card h3 { transition: color 0.3s ease, transform 0.3s ease; }
+.card:hover h3 { color: var(--accent); transform: translateX(5px); }
 
 /* Accordion */
 .accordion-container { max-width: 800px; margin: 0 auto; }
