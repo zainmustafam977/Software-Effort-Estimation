@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum Agile & HCI Analytics</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Vanilla Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body class="dark-mode" id="body">
+    <!-- 13. Custom Dynamic Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- 10. Parallax Background Blobs -->
+    <div class="blob blob-1" data-speed="2"></div>
+    <div class="blob blob-2" data-speed="-2"></div>
+    <div class="blob blob-3" data-speed="1.5"></div>
+
+    <!-- 5. Sticky Nav & 6. Dark/Light Mode Toggle -->
+    <nav class="navbar glass-panel" id="navbar">
+        <div class="logo"><i class="fa-solid fa-chart-line"></i> Scrum.HCI Analytics</div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-item active">Home</a></li>
+            <li><a href="#methodology" class="nav-item">Methodology</a></li>
+            <li><a href="#analysis" class="nav-item">Analysis</a></li>
+            <li><a href="#metrics" class="nav-item">Metrics Map</a></li>
+        </ul>
+        <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </nav>
+
+    <!-- 15. Hero Particle Network -->
+    <header class="hero" id="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1 class="fade-in-el">Software Effort Estimation <br> <span class="gradient-text">HCI & Scrum</span></h1>
+            <!-- 12. Typing Animation -->
+            <p class="typewriter" id="typewriter-text"></p>
+            
+            <div class="team-container fade-in-el delay-2">
+                <!-- 8. 3D Card Tilt & 14. Clickable Modals -->
+                <div class="team-card glass-panel interactive" data-tilt data-tilt-glare data-tilt-max-glare="0.5" onclick="openModal('abdullah')">
+                    <div class="img-wrapper"><img src="assets/Abdullah.jpeg" alt="Muhammad Abdullah Zafar" onerror="this.src='https://via.placeholder.com/150'"></div>
+                    <h3>Muhammad Abdullah Zafar</h3>
+                    <p>ID: F20232661049</p>
+                    <span class="view-role">View Role <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="team-card glass-panel interactive highlight-card" data-tilt data-tilt-scale="1.05" onclick="openModal('prof')">
+                    <div class="img-wrapper"><img src="assets/Professor.jpg" alt="Prof. Qamar Abbas Arbie" onerror="this.src='https://via.placeholder.com/150'"></div>
+                    <h3>Prof. Qamar Abbas Arbie</h3>
+                    <p>Project Supervisor</p>
+                    <span class="view-role">View Role <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="team-card glass-panel interactive" data-tilt data-tilt-glare data-tilt-max-glare="0.5" onclick="openModal('hamdan')">
+                    <div class="img-wrapper"><img src="assets/hamdan.jpeg" alt="Muhammad Hamdan Amir" onerror="this.src='https://via.placeholder.com/150'"></div>
+                    <h3>Muhammad Hamdan Amir</h3>
+                    <p>ID: F20232661028</p>
+                    <span class="view-role">View Role <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 4. Animated Stat Counters -->
+    <section class="stats-bar glass-panel fade-in-el">
+        <div class="stat">
+            <h2 class="counter" data-target="9">0</h2>
+            <p>Datasets Analyzed</p>
+        </div>
+        <div class="stat">
+            <h2 class="counter" data-target="520">0</h2>
+            <p>Historical Projects</p>
+        </div>
+        <div class="stat">
+            <h2 class="counter" data-target="4">0</h2>
+            <p>Week Max Sprints</p>
+        </div>
+        <div class="stat">
+            <h2 class="counter" data-target="20">0</h2>
+            <p>Analysis Points</p>
+        </div>
+    </section>
+
+    <main>
+        <section id="methodology" class="section glass-panel fade-in-el">
+            <h2><span class="gradient-text">Scrum Methodology</span> for FYP</h2>
+            
+            <!-- 2. Expandable Scrum Accordions -->
+            <div class="accordion-container">
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <h3><i class="fa-solid fa-users"></i> Sprint Planning & Roles</h3>
+                        <i class="fa-solid fa-chevron-down icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Development teams select a Scrum Master (rotated every sprint) and negotiate the product backlog with the Product Owner. Sprints run 1-4 weeks with high-value features prioritized.</p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <h3><i class="fa-solid fa-laptop-code"></i> Sprint Activities</h3>
+                        <i class="fa-solid fa-chevron-down icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Includes UI/UX Design, Development, and continuous Testing. <strong>9. Interactive Tooltip:</strong> Testing includes unit, acceptance, load, and usability testing <span class="tooltip" data-tooltip="Ensuring the software meets strict Human-Computer Interaction usability heuristics."><i class="fa-solid fa-circle-info"></i></span>.</p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <h3><i class="fa-solid fa-comments"></i> Daily Scrum & Reviews</h3>
+                        <i class="fa-solid fa-chevron-down icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Daily heartbeat meetings. Concludes with a Wednesday code freeze to GitHub and a Thursday Demo to external stakeholders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="analysis" class="section glass-panel fade-in-el">
+            <h2>Data Analysis & <span class="gradient-text">Findings</span></h2>
+            
+            <!-- 3. Data Visualization Carousel -->
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide">
+                            <img src="assets/plot_project_counts.png" alt="Project Counts">
+                            <div class="slide-caption"><strong>Finding 1-3:</strong> Historical datasets vary greatly in size. Effort distributions are log-normal.</div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <img src="assets/plot_correlations.png" alt="Correlations">
+                            <div class="slide-caption"><strong>Finding 4-9:</strong> FP and LOC correlate strongly (>0.7) with Effort, validating Story Points proxy.</div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <img src="assets/plot_rf_predictions.png" alt="Random Forest Predictions">
+                            <div class="slide-caption"><strong>Finding 10-20:</strong> Random Forest accurately predicts effort, ideal for automated Sprint planning.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next" onclick="moveCarousel(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section id="metrics" class="section glass-panel fade-in-el">
+            <h2>Deeper Research: <span class="gradient-text">Metrics to Agile</span></h2>
+            <p class="section-desc">Mapping traditional software metrics into Scrum iterations.</p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Function Points <i class="fa-solid fa-arrow-right"></i> Story Points</h3>
+                    <p>Historically, an Adjusted Function Point (AdjFP) represented discrete business functionality. In our Scrum model, an Epic with 100 AdjFP can be mapped to 10 Story Points, allowing teams to divide work into 2-week sprints based on historical velocity (e.g., 5 Story Points per sprint).</p>
+                </div>
+                <div class="card">
+                    <h3>Simulated Burn-down</h3>
+                    <p>Applying the Random Forest model to the Albrecht dataset, a project estimated at 102.4 hours would translate to approximately 1.5 weeks of effort for a 2-person development team (Hamdan & Abdullah), fitting perfectly within the 1-4 week FYP sprint constraints.</p>
+                </div>
+            </div>
+
+            <!-- 1. Interactive Dataset Data-Table -->
+            <h3 style="margin-top:40px; text-align:center;">Historical Dataset Index</h3>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Dataset Name</th>
+                            <th>Target Domain</th>
+                            <th>Key Metric</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Albrecht</td><td>IBM Projects</td><td>Adjusted FP</td></tr>
+                        <tr><td>Desharnais</td><td>Canadian Software</td><td>Function Points</td></tr>
+                        <tr><td>ISBSG10</td><td>Multi-company</td><td>Lines of Code (LOC)</td></tr>
+                        <tr><td>Kemerer</td><td>Large Scale IT</td><td>KLOC</td></tr>
+                        <tr><td>Maxwell</td><td>European Banks</td><td>Function Points</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="advanced" class="section glass-panel fade-in-el">
+            <h2><span class="gradient-text">10 Advanced</span> Analysis Directives</h2>
+            <p class="section-desc">To elevate this research, the following 10 advanced analytical dimensions should be explored in future modeling:</p>
+            
+            <div class="grid-2" style="grid-template-columns: 1fr 1fr;">
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-code-branch"></i> 1. Cross-Validation (K-Fold)</h3>
+                    <p>Apply 10-fold cross-validation on the Random Forest models to ensure the effort predictions are robust and not overfitted to a specific subset of the ISBSG or Albrecht data.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-sliders"></i> 2. Hyperparameter GridSearch</h3>
+                    <p>Implement GridSearch to dynamically tune tree depth and estimators in the predictive models, squeezing out maximum accuracy for small datasets like Kemerer.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-chart-line"></i> 3. Learning Curves</h3>
+                    <p>Plot learning curves to determine if acquiring more historical project data (e.g., adding more teams' data over multiple semesters) significantly improves Scrum estimation accuracy.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-brain"></i> 4. SHAP Value Explainability</h3>
+                    <p>Use SHAP (SHapley Additive exPlanations) to crack open the "black box" of the ML models, showing teams exactly *why* a sprint is estimated to take 4 weeks instead of 2 based on specific features.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-object-group"></i> 5. K-Means Project Clustering</h3>
+                    <p>Cluster historical projects into "T-Shirt Sizes" (Small, Medium, Large, Epic) using K-Means. This maps perfectly to Agile T-Shirt sizing for high-level backlog grooming.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-timeline"></i> 6. Time-Series Velocity Tracking</h3>
+                    <p>Simulate continuous Sprints as a time-series forecast to predict when a team's velocity might dip due to technical debt accumulation over multiple semesters.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-map-location-dot"></i> 7. Feature Interaction Mapping</h3>
+                    <p>Generate 2D partial dependence plots to see how Team Size and Total Function Points interact to exponentially increase the risk of missing Sprint deadlines.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-bug"></i> 8. Residual Error Distribution</h3>
+                    <p>Analyze where the models fail worst. If the model severely underestimates highly complex projects, we can flag specific User Stories in Jira as "High Estimation Risk."</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-scale-unbalanced"></i> 9. Algorithmic Complexity Adjustments</h3>
+                    <p>Integrate COCOMO II scale factors (e.g., team cohesion, platform volatility) directly into the Scrum velocity modifier to adjust basic statistical estimates dynamically.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-shield-halved"></i> 10. Agile Risk Assessment Matrix</h3>
+                    <p>Develop a probability vs. impact matrix based on the prediction variance of the Random Forest. Sprints with high variance estimates trigger immediate Product Owner review.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Developed with ❤️ for Human Computer Interaction • Scrum Agile Framework</p>
+    </footer>
+
+    <!-- 7. Back-to-Top FAB -->
+    <button id="backToTop" class="fab"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- Modals -->
+    <div id="roleModal" class="modal">
+        <div class="modal-content glass-panel">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <img id="modalImg" src="" alt="Profile">
+                <div>
+                    <h2 id="modalName">Name</h2>
+                    <h4 id="modalTitle" class="gradient-text">Title</h4>
+                </div>
+            </div>
+            <p id="modalDesc">Description goes here.</p>
+        </div>
+    </div>
+</body>
+</html>
