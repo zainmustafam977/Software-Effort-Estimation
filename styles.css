@@ -173,3 +173,60 @@ body:active .cursor-outline { transform: translate(-50%, -50%) scale(0.8); }
 .modal-header img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary); }
 
 footer { text-align: center; padding: 40px; color: var(--text-muted); border-top: 1px solid var(--glass-border); }
+
+/* --- RESPONSIVENESS: Medium, Small, Extra Small Screens --- */
+
+@media (max-width: 1024px) {
+    .section { padding: 60px 40px; margin-bottom: 80px; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3.5rem); }
+    .stats-bar { flex-wrap: wrap; margin: 40px auto; padding: 30px; gap: 30px; }
+    .stat { width: 40%; text-align: center; }
+}
+
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar { flex-direction: column; gap: 15px; padding: 15px; border-radius: 20px; top: 10px; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+    
+    /* Hero */
+    .hero { padding-top: 150px; }
+    .team-container { flex-direction: column; align-items: center; }
+    .team-card { width: 100%; max-width: 320px; }
+    
+    /* Stats & Sections */
+    .stats-bar { flex-direction: column; align-items: center; gap: 20px; }
+    .stat { width: 100%; }
+    .section { padding: 40px 20px; margin-bottom: 60px; }
+    .section h2 { font-size: 2rem; }
+    
+    /* Grids & Cards */
+    .grid-2 { grid-template-columns: 1fr !important; gap: 30px; }
+    .card { padding: 25px; }
+    
+    /* Modals & Carousel */
+    .modal-content { padding: 25px; }
+    .modal-header { flex-direction: column; text-align: center; }
+    .carousel-btn { width: 35px; height: 35px; font-size: 1rem; }
+    .slide-caption { font-size: 0.9rem; margin-top: -30px; }
+}
+
+@media (max-width: 480px) {
+    .navbar { width: 95%; padding: 10px; }
+    .nav-links a { font-size: 0.85rem; }
+    .logo { font-size: 1rem; }
+    
+    .hero h1 { font-size: 1.8rem; }
+    .typewriter { font-size: 1rem; margin-bottom: 30px; }
+    
+    .section h2 { font-size: 1.6rem; }
+    .card h3 { font-size: 1.1rem; }
+    .card p { font-size: 0.85rem; }
+    
+    /* Accordion adjustments */
+    .accordion-header { padding: 15px; }
+    .accordion-header h3 { font-size: 0.95rem; }
+    .accordion.active .accordion-content { padding: 0 15px 15px; max-height: 300px; }
+    
+    /* Hide custom cursor on extremely small touch devices */
+    .cursor-dot, .cursor-outline { display: none !important; }
+}
