@@ -55,7 +55,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const sections = document.querySelectorAll('section, header');
     const navItems = document.querySelectorAll('.nav-item');
+    const themeToggle = document.getElementById('theme-toggle');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
     const backToTop = document.getElementById('backToTop');
+
+    // Hamburger Menu Toggle
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    }
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+            if (navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+            }
+        });
+    });
 
     window.addEventListener('scroll', () => {
         let scrollY = window.scrollY;
@@ -115,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
     // 11. Intersection Observer Fade-ins & 4. Animated Counters
-    const observerOptions = { threshold: 0.1 };
+    const observerOptions = { threshold: 0.05 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if(entry.isIntersecting) {

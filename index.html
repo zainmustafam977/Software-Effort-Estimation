@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Scrum Agile & HCI Analytics</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
@@ -29,7 +29,8 @@
     <!-- 5. Sticky Nav -->
     <nav class="navbar glass-panel" id="navbar">
         <div class="logo"><i class="fa-solid fa-chart-line"></i> Scrum.HCI Analytics</div>
-        <ul class="nav-links">
+        <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+        <ul class="nav-links" id="nav-links">
             <li><a href="#hero" class="nav-item active">Home</a></li>
             <li><a href="#methodology" class="nav-item">Methodology</a></li>
             <li><a href="#analysis" class="nav-item">Analysis</a></li>
@@ -201,49 +202,69 @@
             </div>
         </section>
         <section id="advanced" class="section glass-panel fade-in-el">
-            <h2><span class="gradient-text">10 Advanced</span> Analysis Directives</h2>
-            <p class="section-desc">To elevate this research, the following 10 advanced analytical dimensions should be explored in future modeling:</p>
+            <h2><span class="gradient-text">15 Advanced</span> Analysis Directives</h2>
+            <p class="section-desc">To elevate this research, the following 15 advanced analytical dimensions should be explored in future modeling:</p>
             
             <div class="grid-2">
                 <div class="card interactive">
-                    <h3><i class="fa-solid fa-code-branch"></i> 1. Cross-Validation (K-Fold)</h3>
-                    <p>Apply 10-fold cross-validation on the Random Forest models to ensure the effort predictions are robust and not overfitted to a specific subset of the ISBSG or Albrecht data.</p>
+                    <h3><i class="fa-solid fa-sliders"></i> 1. COCOMO II Calibration</h3>
+                    <p>Tune standard algorithmic models to the ISBSG dataset, replacing generic constants with locally derived multi-variable regressions.</p>
                 </div>
                 <div class="card interactive">
-                    <h3><i class="fa-solid fa-sliders"></i> 2. Hyperparameter GridSearch</h3>
-                    <p>Implement GridSearch to dynamically tune tree depth and estimators in the predictive models, squeezing out maximum accuracy for small datasets like Kemerer.</p>
+                    <h3><i class="fa-solid fa-arrow-right-arrow-left"></i> 2. Story Point Conversion</h3>
+                    <p>Develop a statistical mapping matrix to bridge Adjusted Function Points directly into Agile Story Points based on historical sprint velocities.</p>
                 </div>
                 <div class="card interactive">
-                    <h3><i class="fa-solid fa-chart-line"></i> 3. Learning Curves</h3>
-                    <p>Plot learning curves to determine if acquiring more historical project data (e.g., adding more teams' data over multiple semesters) significantly improves Scrum estimation accuracy.</p>
+                    <h3><i class="fa-solid fa-dice"></i> 3. Monte Carlo Risk Simulation</h3>
+                    <p>Run 10,000 randomized sprint simulations to establish the 90% confidence interval for on-time delivery across all datasets.</p>
                 </div>
                 <div class="card interactive">
-                    <h3><i class="fa-solid fa-brain"></i> 4. SHAP Value Explainability</h3>
-                    <p>Use SHAP (SHapley Additive exPlanations) to crack open the "black box" of the ML models, showing teams exactly *why* a sprint is estimated to take 4 weeks instead of 2 based on specific features.</p>
+                    <h3><i class="fa-solid fa-wave-square"></i> 4. Velocity Stability Metrics</h3>
+                    <p>Measure the standard deviation of team output over consecutive sprints to pinpoint periods of process instability.</p>
                 </div>
                 <div class="card interactive">
-                    <h3><i class="fa-solid fa-object-group"></i> 5. K-Means Project Clustering</h3>
-                    <p>Cluster historical projects into "T-Shirt Sizes" (Small, Medium, Large, Epic) using K-Means. This maps perfectly to Agile T-Shirt sizing for high-level backlog grooming.</p>
+                    <h3><i class="fa-solid fa-anchor"></i> 5. Technical Debt Drag</h3>
+                    <p>Model how accumulated technical debt exponentially increases future sprint effort and degrades overall Scrum velocity.</p>
                 </div>
                 <div class="card interactive">
-                    <h3><i class="fa-solid fa-timeline"></i> 6. Time-Series Velocity Tracking</h3>
-                    <p>Simulate continuous Sprints as a time-series forecast to predict when a team's velocity might dip due to technical debt accumulation over multiple semesters.</p>
+                    <h3><i class="fa-solid fa-bug"></i> 6. Defect Density Impact</h3>
+                    <p>Correlate pre-release bug counts from Kemerer and Maxwell datasets with total development effort inflation.</p>
                 </div>
                 <div class="card interactive">
-                    <h3><i class="fa-solid fa-map-location-dot"></i> 7. Feature Interaction Mapping</h3>
-                    <p>Generate 2D partial dependence plots to see how Team Size and Total Function Points interact to exponentially increase the risk of missing Sprint deadlines.</p>
+                    <h3><i class="fa-solid fa-bolt"></i> 7. Requirement Volatility</h3>
+                    <p>Analyze effort spikes caused by Product Owner scope changes injected mid-sprint, tracking the ripple effect on downstream tasks.</p>
                 </div>
                 <div class="card interactive">
-                    <h3><i class="fa-solid fa-bug"></i> 8. Residual Error Distribution</h3>
-                    <p>Analyze where the models fail worst. If the model severely underestimates highly complex projects, we can flag specific User Stories in Jira as "High Estimation Risk."</p>
+                    <h3><i class="fa-solid fa-user-ninja"></i> 8. Skill Multiplier Matrix</h3>
+                    <p>Adjust raw effort estimations dynamically based on Developer Experience pairings (e.g., Junior/Senior vs. Senior/Senior).</p>
                 </div>
                 <div class="card interactive">
-                    <h3><i class="fa-solid fa-scale-unbalanced"></i> 9. Algorithmic Complexity Adjustments</h3>
-                    <p>Integrate COCOMO II scale factors (e.g., team cohesion, platform volatility) directly into the Scrum velocity modifier to adjust basic statistical estimates dynamically.</p>
+                    <h3><i class="fa-solid fa-rocket"></i> 9. Sprint Burn-up Trajectories</h3>
+                    <p>Forecast overall project completion dates using predictive burn-up charts mapped against historical data.</p>
                 </div>
                 <div class="card interactive">
-                    <h3><i class="fa-solid fa-shield-halved"></i> 10. Agile Risk Assessment Matrix</h3>
-                    <p>Develop a probability vs. impact matrix based on the prediction variance of the Random Forest. Sprints with high variance estimates trigger immediate Product Owner review.</p>
+                    <h3><i class="fa-solid fa-diagram-project"></i> 10. Use Case Points (UCP)</h3>
+                    <p>Compare UCP estimations directly against traditional Lines of Code (LOC) for modern object-oriented projects.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-satellite-dish"></i> 11. Cosmic Function Points</h3>
+                    <p>Implement ISO standard Cosmic Function Points (CFP) for sizing real-time and multi-layered software architectures.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-network-wired"></i> 12. Deep Learning Estimators</h3>
+                    <p>Deploy Multi-Layer Perceptrons (MLPs) on the Desharnais dataset to capture non-linear relationships missed by linear regression.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-layer-group"></i> 13. Ensemble Regressors</h3>
+                    <p>Combine Random Forest, Gradient Boosting, and SVMs to create an ultra-resilient master prediction model.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-filter"></i> 14. Outlier Detection</h3>
+                    <p>Use Isolation Forests to automatically identify and strip anomalously delayed historical projects from training data.</p>
+                </div>
+                <div class="card interactive">
+                    <h3><i class="fa-solid fa-chart-network"></i> 15. Bayesian Uncertainty Networks</h3>
+                    <p>Map the probabilistic relationships between team size, agile methodology, and final effort to output dynamic confidence scores.</p>
                 </div>
             </div>
         </section>
